@@ -1,0 +1,99 @@
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^Login$  index.php?c=LoginCtrl&m=connexion [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^Acceuil$  index.php?c=AcceuilCtrl&m=toAcceuil [L]
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^Details-([^/]+)$  index.php?c=HotelCtrl&m=afficherContenu&id=$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^DeleteP-([^/]+)$  index.php?c=PersonnelCtrl&m=delete&id=$1 [L]
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^DeleteA-([^/]+)$  index.php?c=ActivitiesCtrl&m=delete&id=$1 [L]
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^Back-office$  index.php?c=BackOfficeCtrl&m=toBo [L]
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ListeFilms$  index.php?c=PageControl&m=toFilm [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^Calendrier$  index.php?c=PageControl&m=toCalendrier [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^Film-Fiche-([^/]+)$ index.php?c=PageControl&m=toFiche&id=$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^Front-Recherche$ index.php?c=PageControl&m=find [L]
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^BackOffice$  index.php?c=BackControl [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^Back-Films$ index.php?c=BackControl&m=toFilms [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^Back-Calendrier$ index.php?c=BackControl&m=toCalendrier [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^Back-Categories$ index.php?c=BackControl&m=toCategories [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^Back-Clients$ index.php?c=BackControl&m=toClients [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^Login$ index.php?c=BackControl&m=connexion [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^Logout$ index.php?c=BackControl&m=deconnexion [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^Delete-Film-([^/]+)$ index.php?c=BackControl&m=supprimerFilm&id=$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^Delete-Categorie-([^/]+)$ index.php?c=BackControl&m=supprimerCategorie&id=$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^Delete-Client-([^/]+)$ index.php?c=BackControl&m=supprimerClient&id=$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^Delete-Calendrier-([^/]+)$ index.php?c=BackControl&m=supprimerCalendrier&id=$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^Back-AddFilm-([^/]+)-([^/]+)-([^/]+)-([^/]+)-([^/]+)-([^/]+)-([^/]+)$ index.php?c=BackControl&m=ajouterFilm&titre=$1$note=$2&durée=$3&date=$4&image=$5&idgenre=$6&description=$7 [L]
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^Cat-([^/]+)-([^/]+)$ index.php?c=Categorie&m=getPostByCateg&idCateg=$2&nomCateg=$1 [L]
